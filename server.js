@@ -9,6 +9,7 @@ app.use(cors());
 require("dotenv").config();
 
 const api_key = process.env.API_KEY;
+const port = process.env.PORT || 8000;
 
 app.post("/shortenURL", async (req, res) => {
   const { prompt } = req.body;
@@ -143,6 +144,6 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log("Server started on port 3001.");
 });
